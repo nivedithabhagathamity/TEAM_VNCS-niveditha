@@ -41,4 +41,181 @@
             <a href="#featured" class="btn-primary">Shop Women's Now</a>
         </div>
     </section>
+ <!-- Style Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Style</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('formal')">
+                    <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e4?w=400&h=500&fit=crop" alt="Formal Wear">
+                    <div class="category-content">
+                        <h3>Formal</h3>
+                        <p>Office & Business Attire</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('casual')">
+                    <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=400&h=500&fit=crop" alt="Casual Wear">
+                    <div class="category-content">
+                        <h3>Casual</h3>
+                        <p>Everyday Comfort & Style</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('sports')">
+                    <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=400&h=500&fit=crop" alt="Sports Wear">
+                    <div class="category-content">
+                        <h3>Sports</h3>
+                        <p>Active & Athletic Wear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2>Featured Women's Collection</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-category="formal">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?w=300&h=400&fit=crop" alt="Blazer Set">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Tailored Blazer Set</h3>
+                        <div class="rating">★★★★★ (52)</div>
+                        <div class="price">₹18,990</div>
+                        <div class="sizes">Sizes: XS, S, M, L, XL</div>
+                        <button class="btn-secondary" onclick="addToCart('blazer-set', 18990, 'Tailored Blazer Set')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=300&h=400&fit=crop" alt="Casual Dress">
+                    </div>
+                    <div class="product-info">
+                        <h3>Cotton Midi Dress</h3>
+                        <div class="rating">★★★★☆ (47)</div>
+                        <div class="price">₹3,490</div>
+                        <div class="sizes">Sizes: XS, S, M, L, XL</div>
+                        <button class="btn-secondary" onclick="addToCart('midi-dress', 3490, 'Cotton Midi Dress')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="formal">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=300&h=400&fit=crop" alt="Pencil Skirt">
+                        <div class="product-badge sale">-20%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Pencil Skirt</h3>
+                        <div class="rating">★★★★★ (38)</div>
+                        <div class="price">
+                            <span class="current">₹2,790</span>
+                            <span class="original">₹3,490</span>
+                        </div>
+                        <div class="sizes">Sizes: XS, S, M, L, XL</div>
+                        <button class="btn-secondary" onclick="addToCart('pencil-skirt', 2790, 'Premium Pencil Skirt')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=300&h=400&fit=crop" alt="Denim Jeans">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>High-Waist Jeans</h3>
+                        <div class="rating">★★★★☆ (42)</div>
+                        <div class="price">₹3,290</div>
+                        <div class="sizes">Sizes: 26, 28, 30, 32, 34</div>
+                        <button class="btn-secondary" onclick="addToCart('high-waist-jeans', 3290, 'High-Waist Jeans')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=300&h=400&fit=crop" alt="Sports Set">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Yoga Set</h3>
+                        <div class="rating">★★★★★ (29)</div>
+                        <div class="price">₹3,990</div>
+                        <div class="sizes">Sizes: XS, S, M, L, XL</div>
+                        <button class="btn-secondary" onclick="addToCart('yoga-set', 3990, 'Yoga Set')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=300&h=400&fit=crop" alt="Blouse">
+                    </div>
+                    <div class="product-info">
+                        <h3>Silk Blouse</h3>
+                        <div class="rating">★★★★★ (36)</div>
+                        <div class="price">₹4,490</div>
+                        <div class="sizes">Sizes: XS, S, M, L, XL</div>
+                        <button class="btn-secondary" onclick="addToCart('silk-blouse', 4490, 'Silk Blouse')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="size-guide" id="size-guide">
+        <div class="container">
+            <h2>Women's Size Guide</h2>
+            <div class="size-content">
+                <div class="size-text">
+                    <h3>Find Your Perfect Fit</h3>
+                    <p>Our women's clothing is designed to flatter every figure, offering both comfort and style. Each piece is crafted with attention to detail and quality materials.</p>
+                    <div class="size-tips">
+                        <div class="tip">
+                            <span class="tip-icon">📏</span>
+                            <div>
+                                <strong>Measure Accurately</strong>
+                                <p>Check bust, waist, and hips for the best fit</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">👗</span>
+                            <div>
+                                <strong>Flattering Fit</strong>
+                                <p>Designed to complement every body type</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">🔄</span>
+                            <div>
+                                <strong>Easy Exchanges</strong>
+                                <p>Free size exchanges within 30 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Bust (cm)</th>
+                                <th>Waist (cm)</th>
+                                <th>Hips (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>XS</td><td>78-82</td><td>62-66</td><td>86-90</td></tr>
+                            <tr><td>S</td><td>86-90</td><td>70-74</td><td>94-98</td></tr>
+                            <tr><td>M</td><td>94-98</td><td>78-82</td><td>102-106</td></tr>
+                            <tr><td>L</td><td>102-106</td><td>86-90</td><td>110-114</td></tr>
+                            <tr><td>XL</td><td>110-114</td><td>94-98</td><td>118-122</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 
