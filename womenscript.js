@@ -163,4 +163,111 @@ function showCategory(category) {
     }
   });
 }
+// Toast Notification
+function showToast(message) {
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  
+  setTimeout(() => {
+    toast.classList.add('show');
+  }, 10);
+  
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => {
+      document.body.removeChild(toast);
+    }, 300);
+  }, 3000);
+}
+
+// Close modal when clicking outside
+window.addEventListener('click', (e) => {
+  if (e.target === cartModal) {
+    closeCart();
+  }
+});
+
+// Add this CSS for toast notifications (you can add to your CSS file)
+const toastStyles = document.createElement('style');
+toastStyles.textContent = `
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1001;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.toast.show {
+  opacity: 1;
+}
+`;
+document.head.appendChild(toastStyles);
+
+// Add this CSS for cart items (you can add to your CSS file)
+const cartItemStyles = document.createElement('style');
+cartItemStyles.textContent = `
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+.cart-item-info h4 {
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+.cart-item-info p {
+  color: var(--secondary-color);
+  font-size: 0.9rem;
+}
+.cart-item-total {
+  display: flex;
+  align-items: center;
+}
+.cart-item-total span {
+  font-weight: 600;
+  margin-right: 15px;
+}
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+}
+.cart-item-actions button {
+  background: none;
+  border: 1px solid #ddd;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-item-actions button:hover {
+  background-color: #f5f5f5;
+}
+.cart-item-actions span {
+  margin: 0 10px;
+}
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--secondary-color);
+}
+.remove-btn:hover {
+  color: #dc3545;
+}
+`;
 
