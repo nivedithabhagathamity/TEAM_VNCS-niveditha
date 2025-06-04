@@ -119,4 +119,48 @@ function removeFromCart(productId) {
   updateCart();
   showToast('Item removed from cart');
 }
+// Modal Functions
+function showCart() {
+  cartModal.style.display = 'flex';
+  renderCartItems();
+}
+
+function closeCart() {
+  cartModal.style.display = 'none';
+}
+
+function checkout() {
+  if (cart.length === 0) {
+    showToast('Your cart is empty');
+    return;
+  }
+  
+  // In a real app, this would redirect to checkout page
+  alert(`Proceeding to checkout with ${cart.reduce((total, item) => total + item.quantity, 0)} items. Total: ₹${cart.reduce((total, item) => total + (item.price * item.quantity), 0).toLocaleString()}`);
+  closeCart();
+}
+
+// Product Filtering
+function showCategory(category) {
+  const products = document.querySelectorAll('.product-card');
+  
+  products.forEach(product => {
+    if (category === 'all' || product.getAttribute('data-category') === category) {
+      product.style.display = 'block';
+    } else {
+      product.style.display = 'none';
+    }
+  });
+  
+  // Scroll to product section
+  document.getElementById('featured').scrollIntoView({ behavior: 'smooth' });
+  
+  // Update active category button (if you have category buttons)
+  document.querySelectorAll('.category-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-category') === category) {
+      btn.classList.add('active');
+    }
+  });
+}
 
